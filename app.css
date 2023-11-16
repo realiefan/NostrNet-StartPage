@@ -2,7 +2,7 @@
 
 :root {
   /* Font Size */
-  --fg-primary: 12vh; /* Time and Greetings */
+  --fg-primary: 8vh; /* Time and Greetings */
   --fg-secondary: 3vh; /* Greetings and Weather widger */
   --fg-date: 8vh; /* Date */
   --fg-list: 2vh; /* Links List */
