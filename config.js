@@ -80,13 +80,13 @@ const CONFIG = {
       id: "5",
       name: "Twiter",
       icon: "twitter",
-      link: "https://nitter.net/",
+      link: "https://twitter.com/home",
     },
     {
       id: "6",
       name: "YouTube",
       icon: "youtube",
-      link: "https://piped.video/trending",
+      link: "https://www.youtube.com/",
     },
   ],
 
