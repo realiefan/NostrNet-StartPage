@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Links Page</title>
+    <title>NostrNet Web</title>
     <link rel="stylesheet" href="lists.css" />
     <style>
         .hidden-button {
@@ -24,6 +23,7 @@
     <div class="button-container">
         <button id="addLinkButton" onclick="openLinkAddingDialog()">Add</button>
         <button class="delete" id="toggleDeleteButton">Edit</button>
+        <button id="homeButton" onclick="goHome()">Back</button>
     </div>
 
     <dialog id="linkAddingDialog">
@@ -37,6 +37,7 @@
         </div>
         <button onclick="addLink()">Add Link</button>
         <button onclick="closeLinkAddingDialog()">Cancel</button>
+       
     </dialog>
     </div>
 
@@ -164,6 +165,11 @@
                 button.classList.toggle('hidden-button');
             });
         }
+        function goHome() {
+                // Change the URL to the desired home link
+                var homeLink = "https://web.nostrnet.work";
+                window.location.href = homeLink;
+            }
     </script>
 </body>
 
