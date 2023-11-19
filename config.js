@@ -58,16 +58,16 @@ const CONFIG = {
       link: "https://google.com/",
     },
     {
-      id: "2",
-      name: "Todoist",
+      id: "5",
+      name: "Nostrnet",
       icon: "network",
-      link: "https://chat.openai.com/",
+      link: "https://nostrnet.work/",
     },
     {
-      id: "3",
-      name: "Mail",
-      icon: "mail",
-      link: "https://mail.protonmail.com/",
+      id: "2",
+      name: "menu",
+      icon: "menu",
+      link: "/lists.html",
     },
 
     {
@@ -77,7 +77,7 @@ const CONFIG = {
       link: "https://cal.nostrnet.work",
     },
     {
-      id: "5",
+      id: "3",
       name: "Twiter",
       icon: "twitter",
       link: "https://twitter.com/home",
