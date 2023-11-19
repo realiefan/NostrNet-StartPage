@@ -48,7 +48,7 @@ body {
 
 }
 #addLinkButton {
-    background-color: #4339af;
+    background-color: #2b282c;
     color: #d6d5d5;
     padding: 6px 8px;
     border: none;
@@ -81,7 +81,7 @@ button {
 
 
 .delete {
-    background-color: #af2a2a;
+    background-color: #2b282c;
     color: #d6d5d5;
     padding: 6px 8px;
     border: none;
