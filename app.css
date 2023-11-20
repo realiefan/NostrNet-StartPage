@@ -104,7 +104,7 @@ body {
 .heading h1 {
   font-size: 2em;
   margin-bottom: 10px;
-  color: #d8dee9;
+  color: var(--fg);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
 }
@@ -195,7 +195,7 @@ body {
   padding: 5px 8px;
   width: 95%;
   font-size: 1.5em;
-  background-color: #201e21;
+  background-color: var(--background);
   box-shadow: 0 5px 7px rgba(0, 0, 0, 0.35);
   border: none;
   border-radius: 10px;
@@ -224,11 +224,11 @@ body {
   margin: 30px;
   font-size: 25px;
   font-weight: 600;
-  background-color: #201e21;
+  background-color: var(--background);
     box-shadow: 0 5px 7px rgba(0, 0, 0, 0.35);
     border: none;
     border-radius: 10px;
-    color: #d8dee9;
+    color: var(--fg);
     padding: 5px 10px;
 }
 
