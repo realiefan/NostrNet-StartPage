@@ -58,13 +58,13 @@ const CONFIG = {
       link: "https://google.com/",
     },
     {
-      id: "5",
+      id: "2",
       name: "Nostrnet",
       icon: "network",
       link: "https://nostrnet.work/",
     },
     {
-      id: "2",
+      id: "5",
       name: "menu",
       icon: "menu",
       link: "/lists.html",

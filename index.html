@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<title>StartPage</title>
+		<title>NostNet Web Portal</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<link rel="manifest" href="/manifest.json" />
@@ -22,13 +22,17 @@
 			<!-- Clock and Greetings  -->
 
 			<div class="timeBlock">
-				<div class="clock">
-					<div id="hour"></div>
-					<div id="separator"></div>
-					<div id="minutes"></div>
+				<div class="heading">
+					<h1>NostrNet Web Portal</h1>
 				</div>
-				<div id="greetings"></div>
+				
+				
+				<div class="searchBar">
+					<input type="text" id="googleSearch" placeholder="Search on Web...">
+					<button class="search" onclick="performGoogleSearch()">Search</button>
+				</div>
 			</div>
+			
 
 			<!-- Date and Weather  -->
 
