@@ -107,6 +107,7 @@ body {
   color: var(--fg);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.35);
 }
 
 .card {
@@ -195,7 +196,7 @@ body {
   padding: 5px 8px;
   width: 95%;
   font-size: 1.5em;
-  background-color: var(--background);
+  background-color: var(--cards);
   box-shadow: 0 5px 7px rgba(0, 0, 0, 0.35);
   border: none;
   border-radius: 10px;
@@ -224,7 +225,7 @@ body {
   margin: 30px;
   font-size: 25px;
   font-weight: 600;
-  background-color: var(--background);
+  background-color: var(--cards);
     box-shadow: 0 5px 7px rgba(0, 0, 0, 0.35);
     border: none;
     border-radius: 10px;
