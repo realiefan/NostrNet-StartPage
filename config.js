@@ -66,7 +66,7 @@ const CONFIG = {
     {
       id: "5",
       name: "Bookmark",
-      icon: "bookmark",
+      icon: "edit",
       link: "/lists.html",
     },
 

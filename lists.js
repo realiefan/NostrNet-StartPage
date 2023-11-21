@@ -75,7 +75,10 @@ function createLinkContainer(link) {
 
 function loadLinks() {
   const linkContainer = document.getElementById("linksContainer");
-  const links = JSON.parse(localStorage.getItem("links")) || [];
+  let links = JSON.parse(localStorage.getItem("links")) || [];
+
+  // Sort the links alphabetically by title
+  links.sort((a, b) => a.title.localeCompare(b.title));
 
   links.forEach((link) => {
     const linkDiv = createLinkContainer(link);

@@ -1,11 +1,8 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Load links from localStorage
+document.addEventListener("DOMContentLoaded", () => {
+  // Load links from localStorage or add defaults
   loadLinks();
 
   // Attach event listener for toggleDeleteButtons
-  document
-    .getElementById("toggleDeleteButton")
-    .addEventListener("click", toggleDeleteButtons);
 });
 
 function openLinkAddingDialog() {
@@ -17,50 +14,18 @@ function closeLinkAddingDialog() {
 }
 
 function addLink() {
-  var title = document.getElementById("newLinkTitle").value;
-  var url = document.getElementById("newLinkURL").value;
+  const title = document.getElementById("newLinkTitle").value;
+  const url = document.getElementById("newLinkURL").value;
 
   if (title && url) {
-    var linkContainer = document.getElementById("linksContainer");
-
-    // Create a new link container
-    var linkDiv = document.createElement("div");
-    linkDiv.className = "link-container";
-
-    // Create a new link button element
-    var linkButton = document.createElement("button");
-    linkButton.textContent = title;
-
-    // Create a delete button element
-    var deleteButton = document.createElement("button");
-    deleteButton.textContent = "X";
-    deleteButton.className = "delete-button"; // Initially hidden
-
-    // Save link data to localStorage
-    var links = JSON.parse(localStorage.getItem("links")) || [];
-    links.push({ title: title, url: url });
+    const links = JSON.parse(localStorage.getItem("links")) || [];
+    links.push({ title, url });
     localStorage.setItem("links", JSON.stringify(links));
 
-    // Add click event to open the link in a new tab
-    linkButton.onclick = function () {
-      window.location.href = url;
-    };
+    const linkContainer = document.getElementById("linksContainer");
 
-    // Add click event to delete the link
-    deleteButton.onclick = function () {
-      // Remove link from localStorage
-      links = links.filter((l) => !(l.title === title && l.url === url));
-      localStorage.setItem("links", JSON.stringify(links));
+    const linkDiv = createLinkContainer({ title, url });
 
-      // Remove link container from the DOM
-      linkDiv.remove();
-    };
-
-    // Append link elements to the link container
-    linkDiv.appendChild(linkButton);
-    linkDiv.appendChild(deleteButton);
-
-    // Append the link container to the container
     linkContainer.appendChild(linkDiv);
 
     // Clear input fields
@@ -74,59 +39,137 @@ function addLink() {
   }
 }
 
+function createLinkContainer(link) {
+  const linkDiv = document.createElement("div");
+  linkDiv.className = "link-container";
+
+  const linkButton = document.createElement("button");
+  linkButton.textContent = link.title;
+
+  linkButton.addEventListener("click", () => {
+    window.location.href = link.url;
+  });
+
+  linkDiv.appendChild(linkButton);
+
+  return linkDiv;
+}
+
 function loadLinks() {
-  var linkContainer = document.getElementById("linksContainer");
-  var links = JSON.parse(localStorage.getItem("links")) || [];
+  const linkContainer = document.getElementById("linksContainer");
+  let links = JSON.parse(localStorage.getItem("links")) || [];
 
-  links.forEach(function (link) {
-    // Create a new link container
-    var linkDiv = document.createElement("div");
-    linkDiv.className = "link-container";
+  // If localStorage is empty, add default links
+  if (links.length === 0) {
+    const defaultLinks = [
+      {
+        id: "bard-embed",
+        url: "https://bard.google.com/",
+        title: "Bard",
+        active: false,
+      },
+      {
+        id: "chatgpt-embed",
+        url: "https://chat.openai.com/",
+        title: "ChatGPT",
+        active: false,
+      },
+      {
+        id: "habla-embed",
+        url: "https://habla.news/",
+        title: "Habla",
+        active: false,
+      },
+      {
+        id: "perplexity-embed",
+        url: "https://www.perplexity.ai/",
+        title: "Perplexity",
+        active: false,
+      },
+      {
+        id: "archive-embed",
+        url: "https://archive.org/",
+        title: "Archive",
+        active: false,
+      },
+      {
+        id: "nostrbuild-embed",
+        url: "https://nostr.build/",
+        title: "Nostr.Build",
+        active: false,
+      },
+      {
+        id: "nostrband-embed",
+        url: "https://nostr.band/",
+        title: "Nostr.Band",
+        active: false,
+      },
 
-    // Create a new link button element
-    var linkButton = document.createElement("button");
-    linkButton.textContent = link.title;
+      {
+        id: "nostrudel-embed",
+        url: "https://nostrudel.ninja/",
+        title: "noStrudel",
+        active: false,
+      },
+      {
+        id: "primal-embed",
+        url: "https://primal.net/home",
+        title: "Primal",
+        active: false,
+      },
+      {
+        id: "satellite-embed",
+        url: "https://satellite.earth/",
+        title: "Satellite",
+        active: false,
+      },
+      {
+        id: "snort-embed",
+        url: "https://snort.social/notes",
+        title: "Snort",
+        active: false,
+      },
+      {
+        id: "stacker-embed",
+        url: "https://stacker.news/",
+        title: "Stacker",
+        active: false,
+      },
+      {
+        id: "stemstr-embed",
+        url: "https://www.stemstr.app/",
+        title: "Stemstr",
+        active: false,
+      },
+      {
+        id: "oddbean-embed",
+        url: "https://oddbean.com/",
+        title: "Oddbean",
+        active: false,
+      },
+      {
+        id: "zapstream-embed",
+        url: "https://zap.stream/",
+        title: "Zap.Stream",
+        active: false,
+      },
+      {
+        id: "zaplife-embed",
+        url: "https://zaplife.lol/",
+        title: "Zaplife",
+        active: false,
+      },
+    ];
 
-    // Create a delete button element
-    var deleteButton = document.createElement("button");
-    deleteButton.textContent = "X";
-    deleteButton.className = "delete-button"; // Initially hidden
+    links = defaultLinks;
+    localStorage.setItem("links", JSON.stringify(defaultLinks));
+  }
 
-    // Add click event to open the link in a new tab
-    linkButton.onclick = function () {
-      window.location.href = url;
-    };
+  // Sort links alphabetically by title
+  links.sort((a, b) => a.title.localeCompare(b.title));
 
-    // Add click event to delete the link
-    deleteButton.onclick = function () {
-      // Remove link from localStorage
-      links = links.filter(
-        (l) => !(l.title === link.title && l.url === link.url)
-      );
-      localStorage.setItem("links", JSON.stringify(links));
-
-      // Remove link container from the DOM
-      linkDiv.remove();
-    };
-
-    // Append link elements to the link container
-    linkDiv.appendChild(linkButton);
-    linkDiv.appendChild(deleteButton);
-
-    // Append the link container to the container
+  links.forEach((link) => {
+    const linkDiv = createLinkContainer(link);
     linkContainer.appendChild(linkDiv);
   });
-}
-
-function toggleDeleteButtons() {
-  // Toggle the visibility of delete buttons
-  var deleteButtons = document.querySelectorAll(".delete-button");
-  deleteButtons.forEach(function (button) {
-    button.classList.toggle("hidden-button");
-  });
-}
-function goHome() {
-  // Change the URL to the desired home link
-  var homeLink = "https://web.nostrnet.work";
-  window.location.href = homeLink;
 }
