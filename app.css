@@ -61,6 +61,20 @@ body {
   justify-content: center;
 }
 
+.logo {
+  max-width: 40px;
+  position: absolute;
+    margin: 1.5em 2em 2em 2em;
+    left: 0;
+    top: 0;
+    color: var(--fg);
+    border: none;
+    cursor: pointer;
+    background-color: #00000000;
+  }
+  /* Adjust the margin as needed */
+
+
 .notransition {
   -webkit-transition: none;
   -moz-transition: none;
@@ -113,7 +127,7 @@ body {
 .card {
   background-color: var(--cards);
   box-shadow: 0 5px 7px rgba(0, 0, 0, 0.35);
-  border-radius: 5px;
+  border-radius: 20px;
 
 }
 
@@ -465,12 +479,30 @@ button {
   font-size: 13px;
   border-radius: 9999px;
   font-weight: 600;
-  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.35);
+  
   white-space: nowrap;
   /* Prevent button text from wrapping */
   overflow: hidden;
   text-overflow: ellipsis;
   /* Add ellipsis (...) for long button text */
+}
+
+linkButton {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background);
+    color: var(--fg);
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    border-radius: 9999px;
+    font-weight: 600;
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.35);
+    white-space: nowrap;
+    /* Prevent button text from wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;
+
 }
 
 #linksContainer {
