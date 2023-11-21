@@ -19,6 +19,16 @@ function addLink() {
 
   if (title && url) {
     const links = JSON.parse(localStorage.getItem("links")) || [];
+
+    // Check for duplicate links
+    const isDuplicate = links.some(
+      (link) => link.title === title || link.url === url
+    );
+    if (isDuplicate) {
+      alert("This link already exists.");
+      return;
+    }
+
     links.push({ title, url });
     localStorage.setItem("links", JSON.stringify(links));
 
