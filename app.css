@@ -64,7 +64,7 @@ body {
 .logo {
   max-width: 40px;
   position: absolute;
-    margin: 1.5em 2em 2em 2em;
+    margin: 2em;
     left: 0;
     top: 0;
     color: var(--fg);
@@ -487,7 +487,7 @@ button {
   /* Add ellipsis (...) for long button text */
 }
 
-linkButton {
+mainButton {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--background);
     color: var(--fg);
