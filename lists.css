@@ -50,7 +50,7 @@ body {
 
 }
 #addLinkButton {
-    background-color: #2b282c;
+background-color: #2b282c;
     color: #d6d5d5;
     padding: 6px 8px;
     border: none;
@@ -58,8 +58,6 @@ body {
     font-size: 15px;
     border-radius: 9999px;
     font-weight: 600;
-    margin: 10px;
-    margin-right: 20px;
     box-shadow: 0 5px 7px rgba(0, 0, 0, 0.35);
 }
 
