@@ -1,14 +1,14 @@
 {
-  "name": "StartPage",
-  "short_name": "StartPage",
-  "description": "Fetch, backup and broadcast your Nostr events",
+  "name": "WebStash",
+  "short_name": "WebStash",
+  "description": "Web portal by NostrNet",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#202124",
   "theme_color": "#202124",
   "icons": [
     {
-      "src": "icon.png", 
+      "src": "/assets/icons/icon.png", 
       "sizes": "192x192",
       "type": "image/png"
     }
