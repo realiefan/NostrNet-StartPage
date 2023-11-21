@@ -86,7 +86,7 @@ function loadLinks() {
 function toggleDeleteButtons() {
   const deleteButtons = document.querySelectorAll(".delete-button");
   deleteButtons.forEach((button) => {
-    button.classList.toggle("visible-button");
+    button.classList.toggle("hidden-button");
   });
 }
 

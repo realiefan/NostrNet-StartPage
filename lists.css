@@ -103,7 +103,6 @@ button {
         border-radius: 9999px;
         font-weight: 600;
         box-shadow: 0 5px 7px rgba(0, 0, 0, 0.35);
-        margin-left: 10px;
 }
 
 #backButton:hover {
@@ -163,13 +162,14 @@ input:focus::placeholder {
     position: absolute;
     top: 0;
     right: 0;
-    background-color: red;
+    background-color: #201e21;
     color: white;
     border: none;
     padding: 0px 3px;
     cursor: pointer;
     display: none;
     font-size: large;
+    
 }
 
 .hidden-button {

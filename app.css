@@ -129,6 +129,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  top: 20px;
 }
 
 .weatherBlock {
