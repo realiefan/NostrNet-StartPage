@@ -53,8 +53,9 @@ function createLinkContainer(link) {
   const linkDiv = document.createElement("div");
   linkDiv.className = "link-container";
 
-  const linkButton = document.createElement("button");
+  const linkButton = document.createElement("mainButton");
   linkButton.textContent = link.title;
+  linkButton.className = "mainButton";
 
   linkButton.addEventListener("click", () => {
     window.location.href = link.url;
