@@ -391,6 +391,17 @@ body {
   color: var(--sfg);
 }
 
+#installButton {
+  display: none;
+  position: absolute;
+  top: 2.5em;
+  right: 6em;
+  padding: 5px 5px;
+  font-size: smaller;
+  background-color: rgb(65, 41, 185);
+  color: white;
+}
+
 /* M E D I A - Q U E R I E S */
 
 @media only screen and (max-width: 68.75em) {
