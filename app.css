@@ -64,7 +64,8 @@ body {
 .logo {
   max-width: 40px;
   position: absolute;
-    margin: 2em;
+    margin: 1.8em;
+    margin-top: 1.5em;
     left: 0;
     top: 0;
     color: var(--fg);
@@ -394,12 +395,13 @@ body {
 #installButton {
   display: none;
   position: absolute;
-  top: 2.5em;
+  top: 2.4em;
   right: 6em;
   padding: 5px 5px;
   font-size: smaller;
-  background-color: rgb(65, 41, 185);
+  background-color: rgb(43, 41, 185);
   color: white;
+  border-radius: 5px;
 }
 
 /* M E D I A - Q U E R I E S */
