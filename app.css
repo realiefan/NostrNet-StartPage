@@ -211,7 +211,7 @@ body {
 #googleSearch {
   padding: 5px 8px;
   width: 95%;
-  font-size: larger;
+  font-size: medium;
   background-color: var(--cards);
   box-shadow: 0 5px 7px rgba(0, 0, 0, 0.35);
   border: none;
@@ -394,14 +394,24 @@ body {
 
 #installButton {
   display: none;
-  position: absolute;
-  top: 2.4em;
-  right: 6em;
-  padding: 5px 5px;
-  font-size: smaller;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  font-size: 10px;
   background-color: rgb(43, 41, 185);
   color: white;
-  border-radius: 5px;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 15px;
+
+  
+  /* Adjust the z-index if needed */
+}
+
+#installButton:hover {
+  background-color: rgb(33, 31, 145);
 }
 
 /* M E D I A - Q U E R I E S */
@@ -543,3 +553,74 @@ mainButton {
 button:hover {
   background-color: #3b3a3b;
 }
+
+
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  
+}
+ #dialog {
+   display: none;
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background-color: #414040;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   border-radius: 8px;
+   max-width: 400px;
+   width: 100%;
+   padding: 24px;
+   text-align: center;
+  z-index: 1000;
+ }
+
+ #dialog p {
+   margin: 0 0 16px;
+   font-size: 16px;
+   color: rgb(255, 255, 255);
+   padding-bottom: 10px;
+   font-weight: 600;
+ }
+
+ #dialog ol {
+   text-align: left;
+   margin: 0;
+   padding: 0;
+   list-style-type: decimal;
+ }
+
+ #dialog li {
+   margin-bottom: 8px;
+   font-size: 14px;
+   color: rgb(255, 255, 255);
+   font-weight: 600;
+ }
+
+ #dialog strong {
+   color: #a7aeee;
+ }
+
+ #dialog button {
+   background-color: #6774e5;
+   color: #fff;
+   border: none;
+   padding: 10px 20px;
+   font-size: 16px;
+   border-radius: 4px;
+   cursor: pointer;
+   margin-top: 16px;
+   transition: background-color 0.3s ease;
+ }
+
+ #dialog button:hover {
+   background-color: #2980b9;
+ }

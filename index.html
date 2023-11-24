@@ -20,7 +20,7 @@
 			<i id="themeIcon" icon-name="moon"></i>
 		</button>
 		<img src="/assets/icons/icon.png" alt=" Logo" class="logo">
-		<button id="installButton" style="display: none;">Install App</button>
+		
 
 		
 		<div class="container">
@@ -44,10 +44,34 @@
 				
 					
 			</div>
+
+			<div id="overlay"></div>
+			<div id="dialog" >
+				<p><strong>This app can't run in a browser,</strong> you need to install it as a Progressive Web App (PWA).</p>
+				
 			
+				
+				<button id="installButton" style="display: none;">Install on Android/PC/Mac</button>
+				<ol>
+					 <strong>For IOS, iPad, Safari Users:</strong> <br></ol>
+					<li>On Safari, Tap the <strong>Share</strong> icon at the bottom of the Safari browser.</li>
+					<li>Scroll down and tap on <strong>"Add to Home Screen"</strong>.</li>
+					<li>Customize the app name if needed and tap <strong>"Add"</strong>.</li>
+				</ol>
 
-			<!-- Date and Weather  -->
-
+				<ol>
+					<strong>For Android, PC, Mac users:</strong> <br>
+				</ol>
+				<li>Open the app in the Chrome browser</li>
+				<li>Tap the <strong>three dots</strong> in the top-right corner.</li>
+				<li>Customize the app name if needed and tap <strong>"Add to Home screen" or "Install"</strong>.</li>
+				</ol>
+			
+				<!-- Display the "Install App" button if needed -->
+				
+			
+				
+			</div>
 			
 
 			<div class="linksBlock" id="linksBlock">
@@ -65,7 +89,7 @@
 		<script src="assets/js/theme.js"></script>
 		<script src="assets/js/time.js"></script>
 		<script src="assets/js/install.js"></script>
-		<script src="assets/js/weather.js"></script>
+		<script src="assets/js/search.js"></script>
 
 		<!-- Generators  -->
 		<script src="assets/js/buttons.js"></script>
@@ -80,6 +104,21 @@
 			if ('serviceWorker' in navigator) {
 				navigator.serviceWorker.register('/assets/js/sw.js')
 			}
+		</script>
+
+		<script>
+			// Check if the app is in standalone mode
+			if (window.matchMedia('(display-mode: standalone)').matches) {
+				// App is in standalone mode, hide the dialog
+				document.getElementById('dialog').style.display = 'none';
+			} else {
+				// App is not in standalone mode, show the dialog
+				document.getElementById('dialog').style.display = 'block';
+				 document.getElementById('overlay').style.display = 'block';
+			}
+			function closeDialog() {
+					document.getElementById('dialog').style.display = 'none';
+				}
 		</script>
 		
 
